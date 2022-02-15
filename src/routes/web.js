@@ -1,5 +1,4 @@
 import express from "express";
-import chatbotController from "../controllers/chatbotController";
 import homepageController from "../controllers/homepageController";
 import chatBotController from "../controllers/chatBotController";
 
