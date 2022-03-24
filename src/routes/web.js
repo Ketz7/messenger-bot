@@ -8,6 +8,9 @@ let initWebRoutes = (app) => {
   router.get("/", homepageController.getHomepage);
   router.get("/webhook", chatBotController.getWebhook);
   router.post("/webhook", chatBotController.postWebHook);
+  router.get("/messages", chatBotController.messages);
+  // router.get("/messages/:id", chatBotController.messsages);
+  // router.get("/summary", chatBotController.summary);
 
   return app.use("/", router);
 };

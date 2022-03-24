@@ -2,6 +2,20 @@ require("dotenv").config;
 import request from "request";
 import mongoose from "mongoose";
 
+// let uri = "<youruri>";
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// const MessageSchema = new mongoose.Schema({
+//   user: { type: String, required: true },
+//   id: { type: String, required: true },
+//   message: [String],
+// });
+
+// const UserSchema = new mongoose.Schema({
+//   user: { type: String, required: true },
+//   name: String,
+// });
+
 let postWebHook = (req, res) => {
   let body = req.body;
 
@@ -56,6 +70,10 @@ let getWebhook = (req, res) => {
     }
   }
 };
+
+let messages = (req, res) => {};
+
+let summary = (req, res) => {};
 
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
@@ -134,7 +152,15 @@ function callSendAPI(sender_psid, response) {
   );
 }
 
+function saveUser(sender_psid, username) {}
+
+function saveMessage(data) {}
+
+function getMessageById(id) {}
+
 module.exports = {
   postWebHook: postWebHook,
   getWebhook: getWebhook,
+  messages: messages,
+  summary: summary,
 };
